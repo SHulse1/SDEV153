@@ -1,25 +1,7 @@
 body {
     margin: 0;
     background: #000000;
-    text-align: center;
-}
-
-h1 {
-    color: #ffffff;
-    font-family: system-ui, -apple-system, "Segoe IU", Roboto, sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    font-size: 2rem;
-    margin: 0.75rem 0 0.5rem 1rem;
-}
-
-h1::after {
-    content: "";
-    display: block;
-    width: 68px;
-    height: 3px;
-    background-color: #E10600;
-    margin-top: 0.2rem;
+    text-align: left;
 }
 
 p {
@@ -45,7 +27,7 @@ nav {
 nav a {
     display: block;
     width: 200px;
-    padding: 0.65rem 0.9rem;
+    padding: 0.9rem 0.9rem;
     margin-bottom: 0.6rem;
     
     background: #111;
@@ -83,9 +65,34 @@ nav a.active {
 }
 
 .sidebar {
-    background: #000000;
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 1) 50%,
+            rgba(0, 0, 0, 0.96) 60%,
+            rgba(0, 0, 0, 0.80) 68%,
+            rgba(0, 0, 0, 0.60) 78%,
+            rgba(0, 0, 0, 0.35) 88%,
+            rgba(0, 0, 0, 0.15) 95%,
+            rgba(0, 0, 0, 0) 100%
+        ),
+        url("../images/carbon-fiber.jpg");
+    
+    background-size: 100% 100%, auto;
+    background-position: top, bottom;
+    background-repeat: no-repeat, repeat-y;
+    
     padding: 1.25rem;
     text-align: left;
+    border-right: 1px solid #E10600;
+
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar header {
@@ -95,11 +102,147 @@ nav a.active {
 }
 
 .sidebar nav {
-    margin-top: 1.5rem;
+    margin-top: 3rem;
 }
 
-.content {
-    background: #181818;
-    padding: 2rem;
-    text-align: left;
+.sidebar-footer {
+    margin-top: auto;
+    padding: 3rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+}
+
+/* Social Links */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+    opacity: 0.65;
+    transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.social-links a:hover img,
+.social-links a:focus img {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.social-links::after {
+    content: "";
+    flex-basis: 100%;
+    width: 60%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0.75rem auto 0;
+}
+
+/* Home Page Background */
+
+.page-home .content {
+    position: relative;
+
+    background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.50) 0%,
+      rgba(0,0,0,0.75) 50%
+    ),
+    url("../images/volleyball.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 4rem;
+}
+
+/* Home Page Headline */
+
+.hero-text {
+  max-width: 1000px;
+}
+
+.hero-title {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #e5e5e5;
+  margin: 0;
+}
+
+.hero-title::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 3px;
+  background: #E10600;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.hero-subtitle {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cfcfcf;
+  margin: 0;
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.page-home .hero-text {
+    animation: slideInFromRight 700ms ease-out both;
+}
+
+/* Photo credit styling */
+
+.photo-credit {
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: #e5e5e5;
+    text-align: center;
+}
+
+.photo-credit a,
+.photo-creait a:visited,
+.photo-credit a:hover,
+.photo-credit a:active {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.photo-credit a:hover {
+    text-decoration: underline;
 }
