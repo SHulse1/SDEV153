@@ -189,9 +189,32 @@ nav a.active {
         rgba(0,0,0,1) 0%,
         rgba(0,0,0,0.90) 35%,
         rgba(0,0,0,0.50) 65%,
-        rgba(0,0,0,0.15) 100%
+        rgba(0,0,0,0.15) 80%
     ),
     url("../images/about-background.jpg") center / cover no-repeat;
+
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4rem;
+}
+
+/* Services Page Background */
+
+.page-services .content {
+    position: relative;
+
+    background:
+        linear-gradient(
+        to right,
+        rgba(0,0,0,1) 0%,
+        rgba(0,0,0,0.80) 50%,
+        rgba(0,0,0,0.50) 75%,
+        rgba(0,0,0,0.15) 100%
+    ),
+    url("../images/services-background.jpg") center / cover no-repeat;
 
     min-height: 100vh;
     box-sizing: border-box;
@@ -262,7 +285,7 @@ nav a.active {
 }
 
 .photo-credit a,
-.photo-creait a:visited,
+.photo-credit a:visited,
 .photo-credit a:hover,
 .photo-credit a:active {
     color: #ccc;
@@ -305,8 +328,6 @@ nav a.active {
     line-height: 1.75;
     color: #d6d6d6;
     margin-bottom: 1.25rem;
-
-    max-width: 1000px;
     text-wrap: pretty;
 }
 
@@ -333,4 +354,95 @@ nav a.active {
   height: 3px;
   background: #E10600;
   margin: 1rem 0 1.5rem;
+}
+
+/* Service Page Text & Styling */
+
+.page-services .content {
+    font-family: var(--heading-font);
+}
+
+.page-services h1 {
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #f0f0f0;
+    margin-bottom: 1rem;
+}
+
+.page-services h1::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 3px;
+    background: #e10600;
+    margin: 1rem 0 1.5rem;
+}
+
+.page-services p {
+    max-width: 720px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #d6d6d6;
+    margin-bottom: 1.25rem;
+}
+
+.page-services h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #e8e8e8;
+}
+
+.page-services .content p a,
+.page-services .content p a:visited {
+    color: #e10600;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.page-services .content p a:hover,
+.page-services .content p a:focus {
+    text-decoration: underline;
+}
+
+.page-services .photo-credit {
+    color: #ccc;
+}
+
+/* Services Table Styling */
+
+.services-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem 0;
+    border-collapse: collapse;
+    color: #e0e0e0;
+}
+
+.services-table th,
+.services-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+}
+
+.services-table thead th {
+    font-weight: 700;
+    color: #f0f0f0;
+    border-bottom: 2px solid #e10600;
+}
+
+.services-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.services-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.services-table td:last-child {
+    font-weight: 600;
+    white-space: nowrap;
 }
